@@ -1,6 +1,7 @@
+import { HttpModule } from "@nestjs/axios";
 import { Module } from "@nestjs/common";
-import { ConfigService } from "@nestjs/config";
-import KeycloakConnect from "keycloak-connect";
+import { ConfigModule, ConfigService } from "@nestjs/config";
+import * as KeycloakConnect from "keycloak-connect";
 
 export const keycloakConfig = (configService: ConfigService) => {
     return new KeycloakConnect({}, {
@@ -14,6 +15,10 @@ export const keycloakConfig = (configService: ConfigService) => {
 };
 
 @Module({
+    imports: [
+        ConfigModule,
+        HttpModule,
+    ],
     providers: [
         {
             provide: 'KEYCLOAK_INSTANCE',

@@ -10,6 +10,7 @@ async function bootstrap() {
 
   const config = new DocumentBuilder()
     .setTitle('ACL API')
+    .addBearerAuth()
     .setDescription('The ACL API description')
     .setVersion('1.0')
     .addTag('acl')
