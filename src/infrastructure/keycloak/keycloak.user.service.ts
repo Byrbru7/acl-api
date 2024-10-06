@@ -27,7 +27,7 @@ export class KeycloakUserService implements IKeycloakUserService {
                 email: user.email,
                 firstName: user.firstName,
                 lastName: user.lastName,
-                // emailVerified: true,
+                emailVerified: true,
                 credentials: [
                     {
                         type: 'password',
