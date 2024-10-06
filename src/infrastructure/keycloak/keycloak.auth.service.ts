@@ -21,6 +21,7 @@ export class KeycloakAuthService implements IKeycloakAuthService {
 
             const params = new URLSearchParams();
             params.append('client_id', this._configService.get('KEYCLOAK_CLIENT_ID'));
+            params.append('client_secret', this._configService.get('KEYCLOAK_CLIENT_SECRET'));
             params.append('grant_type', 'password');
             params.append('username', loginDTO.username);
             params.append('password', loginDTO.password);
